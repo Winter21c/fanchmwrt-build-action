@@ -43,9 +43,11 @@ jobs:
     timeout-minutes: 360
 
     steps:
+      - name: 检出 Action 仓库
+        uses: actions/checkout@v4
+
       - name: 安装编译依赖
         run: |
-          sudo apt-get update
           sudo apt-get update
           sudo apt-get install -y \
             build-essential ccache ecj fastjar file g++ gawk \
